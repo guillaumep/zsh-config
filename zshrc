@@ -414,47 +414,47 @@ bindkey "${key[Down]}" history-beginning-search-forward-end
 ##############################
 # Auto update
 ##############################
-
-local update_file last_update current_time week
-update_file=$HOME/.zsh/update
-
-# This script checks for configuration files update
-
-function check_update () {
-  if [[ ! -d $HOME/.zsh/.bzr ]] || [[ ! -x `which bzr` ]] ; then
-    return 0
-  fi
-
-  # Remote revisions and local revision
-  local rrev lrev update
-
-  if [[ -x `which bzr` ]] ; then
-    echo "Looking for zsh configuration update, please wait..."
-    rrev=$(bzr revno http://bazaar.launchpad.net/~tonio/+junk/zsh 3>&2 2>/dev/null)
-    lrev=$(bzr revno $HOME/.zsh/)
-
-    if [[ $rrev > $lrev ]]; then
-      echo "A new zsh configuration version (version $rrev) is available."
-      echo "Do you want to replace your local configuration (version $lrev) ? (y/N)"
-      read update
-      if [ $update = "y" ] ; then
-        bzr up $HOME/.zsh
-      fi
-    fi
-  fi
-}
-
-# Create the file used at reference it not exists
-if [[ ! -r $update_file ]]; then
-  touch $update_file
-fi
-
-last_update=$(stat +mtime $update_file)
-current_time=$(date +"%s")
-
-# Number of seconds in a week
-week=$((3600 * 24 * 7))
-
+#
+#local update_file last_update current_time week
+#update_file=$HOME/.zsh/update
+#
+## This script checks for configuration files update
+#
+#function check_update () {
+#  if [[ ! -d $HOME/.zsh/.bzr ]] || [[ ! -x `which bzr` ]] ; then
+#    return 0
+#  fi
+#
+#  # Remote revisions and local revision
+#  local rrev lrev update
+#
+#  if [[ -x `which bzr` ]] ; then
+#    echo "Looking for zsh configuration update, please wait..."
+#    rrev=$(bzr revno http://bazaar.launchpad.net/~tonio/+junk/zsh 3>&2 2>/dev/null)
+#    lrev=$(bzr revno $HOME/.zsh/)
+#
+#    if [[ $rrev > $lrev ]]; then
+#      echo "A new zsh configuration version (version $rrev) is available."
+#      echo "Do you want to replace your local configuration (version $lrev) ? (y/N)"
+#      read update
+#      if [ $update = "y" ] ; then
+#        bzr up $HOME/.zsh
+#      fi
+#    fi
+#  fi
+#}
+#
+## Create the file used at reference it not exists
+#if [[ ! -r $update_file ]]; then
+#  touch $update_file
+#fi
+#
+#last_update=$(stat +mtime $update_file)
+#current_time=$(date +"%s")
+#
+## Number of seconds in a week
+#week=$((3600 * 24 * 7))
+#
 #if [[ $(($current_time - $last_update)) -gt $week ]] && [[ $AUTO_UPDATE == yes ]] ; then
 #  check_update
 #  touch $update_file

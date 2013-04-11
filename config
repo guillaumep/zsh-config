@@ -13,7 +13,7 @@ CVS_SUPPORT=yes
 # Auto update (yes/no)
 # Defines if you want to update your zsh configuration automatically (weekly)
 ###############################################################################
-AUTO_UPDATE=yes
+AUTO_UPDATE=no
 
 ###############################################################################
 # Command correction (yes/no)
