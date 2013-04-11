@@ -1,0 +1,16 @@
+alias slrn="slrn -n"
+alias man='LC_ALL=C LANG=C man'
+alias f=finger
+alias ll='ls -l'
+alias grep='grep --color'
+case "$OS" in
+  Darwin) # OSX
+    alias ls='ls -G '
+    ;;
+  *) # Else (BSD/Linux)
+    alias ls='ls --color=auto '
+    ;;
+esac
+alias offlineimap-tty='offlineimap -u TTY.TTYUI'
+alias hnb-partecs='hnb $HOME/partecs/partecs-hnb.xml'
+alias rest2html-css='rst2html --embed-stylesheet --stylesheet-path=/usr/share/python-docutils/s5_html/themes/default/print.css'

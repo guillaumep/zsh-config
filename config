@@ -1,0 +1,40 @@
+###############################################################################
+# VCS Support (yes/no)
+# Defines if your shell prompt should advertise about svn, bzr or git
+# informations
+###############################################################################
+SVN_SUPPORT=yes
+BZR_SUPPORT=yes
+GIT_SUPPORT=yes
+HG_SUPPORT=yes
+CVS_SUPPORT=yes
+
+###############################################################################
+# Auto update (yes/no)
+# Defines if you want to update your zsh configuration automatically (weekly)
+###############################################################################
+AUTO_UPDATE=yes
+
+###############################################################################
+# Command correction (yes/no)
+# Defines if you want to enable command correction.
+# COMAND_CORRECTION will make zsh propose corrections for shell commands.
+# ARGS_CORRECTION will extend correction to command arguments.
+###############################################################################
+COMMAND_CORRECTION=yes
+ARGS_CORRECTION=yes
+
+###############################################################################
+# Command status (yes/no)
+# Defines if you want zsh to display the previous command's exit status code
+# into your shell prompt.
+###############################################################################
+COMMAND_STATUS=yes
+
+###############################################################################
+# SSH keys management (yes/no)
+# Defines if you want zsh to manage your ssh keys using "keychain" or
+# "ssh-agent".
+# Note that if both commands are available, "keychain" will be used.
+###############################################################################
+SSH_KEYS_MANAGEMENT=yes
